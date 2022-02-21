@@ -6,28 +6,22 @@ $('.auth__button').click(function() {
         var userEmail = $('#username').val();
         var userPassword = $('#password').val()
 
-        const headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-
-        const body = `{ "email": "1@mail.com", "password": "1" }`;
-
-        const init = {
-            method: 'POST',
-            headers,
-            body
+        var settings = {
+            "url": "http://192.99.10.113:9001/auth",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+                "email": "153@mail.com",
+                "password": "14"
+            }),
         };
 
-        fetch('http://192.99.10.113:9001/auth', init)
-            .then((response) => {
-                return response.json(); // or .text() or .blob() ...
-            })
-            .then((text) => {
-                // text is the response body
-            })
-            .catch((e) => {
-                // error in e.message
-            });
-
+        $.ajax(settings).done(function(response) {
+            console.log(response);
+        });
     } else {
         alert('Enter data for all fields!')
     }
