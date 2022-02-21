@@ -1,0 +1,86 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.crypto__header {
+    max-height: 125px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    width: 100vw;
+    background: #3A4EFF;
+    color: white;
+}
+
+.crypto__header p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+    color: #FFFFFF;
+}
+
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.crypto__auth_block {
+    width: 385px;
+    margin: 0 auto;
+    margin-top: 15vh;
+}
+
+.crypto__auth_block p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #1B1B1B;
+    margin-top: 50px;
+    color: #1B1B1B;
+    margin-bottom: 10px;
+}
+
+.crypto__auth_block input {
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 2px solid #1B1B1B;
+    font-size: 20px;
+    outline: none;
+    font-weight: 700;
+}
+
+.auth__button {
+    margin-top: 50px;
+    width: 100%;
+    height: 50px;
+    background: #1B1B1B;
+    outline: none;
+    border: 2px solid transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    color: #FFFFFF;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.auth__button:hover {
+    border: 2px solid #1B1B1B;
+    color: #1B1B1B;
+    background: transparent;
+}
