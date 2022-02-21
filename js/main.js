@@ -6,22 +6,24 @@ $('.auth__button').click(function() {
         var userEmail = $('#username').val();
         var userPassword = $('#password').val()
 
-        var settings = {
-            "url": "http://192.99.10.113:9001/auth",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify({
-                "email": "1@mail.com",
-                "password": "1"
-            }),
+        var url = "http://192.99.10.113:9001/auth";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+            }
         };
 
-        $.ajax(settings).done(function(response) {
-            console.log(response);
-        });
+        var data = '{ "email": "1@mail.com", "password": "1" }';
+
+        xhr.send(data);
+
     } else {
         alert('Enter data for all fields!')
     }
