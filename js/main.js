@@ -6,22 +6,24 @@ $('.auth__button').click(function() {
         var userEmail = $('#username').val();
         var userPassword = $('#password').val()
 
-        var settings = {
-            "url": "http://192.99.10.113:9001/auth",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify({
-                "email": "153@mail.com",
-                "password": "14"
-            }),
-        };
-
-        $.ajax(settings).done(function(response) {
-            console.log(response);
+        var data = JSON.stringify({
+            "email": "153@mail.com",
+            "password": "14"
         });
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function() {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("POST", "https://test-24mex.happylucky.online:9001/auth");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send(data);
     } else {
         alert('Enter data for all fields!')
     }
