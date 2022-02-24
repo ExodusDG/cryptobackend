@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KattenRadar - Zoekacties</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="style/leaflet-gesture-handling.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/default_styles.css">
+    <link rel="stylesheet" href="style/inner_styles.css">
+</head>
+
+<body>
+    <!-- STICKY HEADER -->
+    <div class="sticky__container">
+        <div class="header" id="sticky__header">
+            <ul>
+                <li>
+                    <a href="#"> <img src="img/logotype.svg" alt="Logotype"></a>
+                </li>
+                <li>
+                    <ul class="header__menu_list">
+                        <li>
+                            <a href="/home">Home</a>
+                        </li>
+                        <li>
+                            <a href="/searches">Huidige Zoekacties</a>
+                        </li>
+                        <li>
+                            <a href="/about">Over ons</a>
+                        </li>
+                        <li class="lang__wrapper" id="sticky__lang__wrapper">
+                            <div class="header__current_lang">
+                                <div><img class="icon__flag" id="icon__flag_sticky" src="img/icons/flag_dutch.svg" alt="Flag"><span id="language_sticky">NL</span><img class="header__down" src="img/icons/header_down.svg" alt="Down"></div>
+                            </div>
+                            <div class="header__lang">
+                                <div><img class="icon__flag" id="Dutch" src="img/icons/flag_dutch.svg" alt="Flag"> NL
+                                </div>
+                                <div><img class="icon__flag" id="English" src="img/icons/flag_eng.svg" alt="Flag"> EN
+                                </div>
+                                <div><img class="icon__flag" id="Deutsch" src="img/icons/flag_deu.svg" alt="Flag"> DE
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="header__start_search">Zoekactie starten</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- STICKY HEADER END -->
+    <div class="blur__wrapper">
+        <!-- HEADER -->
+        <div class="header default_header">
+            <ul>
+                <li>
+                    <a href="#"> <img src="img/logotype.svg" alt="Logotype"></a>
+                </li>
+                <li>
+                    <ul class="header__menu_list">
+                        <li>
+                            <a href="/home">Home</a>
+                        </li>
+                        <li>
+                            <a href="/searches">Huidige Zoekacties</a>
+                        </li>
+                        <li>
+                            <a href="/about">Over ons</a>
+                        </li>
+                        <li class="lang__wrapper">
+                            <div class="header__current_lang">
+                                <div><img class="icon__flag" id="icon__flag" src="img/icons/flag_dutch.svg" alt="Flag"><span id="language">NL</span><img class="header__down" src="img/icons/header_down.svg" alt="Down"></div>
+                            </div>
+                            <div class="header__lang">
+                                <div><img class="icon__flag" id="Dutch" src="img/icons/flag_dutch.svg" alt="Flag"> NL
+                                </div>
+                                <div><img class="icon__flag" id="English" src="img/icons/flag_eng.svg" alt="Flag"> EN
+                                </div>
+                                <div><img class="icon__flag" id="Deutsch" src="img/icons/flag_deu.svg" alt="Flag"> DE
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="header__start_search">Zoekactie starten</button>
+                </li>
+            </ul>
+        </div>
+        <!-- HEADER END -->
+        <!-- MOBILE HEADER -->
+        <div class="mb__header">
+            <div class="mb__header_top">
+                <img src="img/logotype.svg" alt="Logotype">
+                <div class="mb__header_icons">
+                    <a href="#"><img src="img/icon_facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="img/icon_insta.svg" alt="Instagram"></a>
+                </div>
+                <div class="mb__header_lang">
+                    <img class="mb__header_icon" src="img/icons/flag_dutch.svg" alt="Mobile Lang">
+                    <p><img src="img/icons/down.svg" alt="Mobile Lang Down"></p>
+                </div>
+            </div>
+            <div class="mb__header_menu">
+                <a href="#" class="header__menu_active">Home</a>
+                <a href="#">Huidige Zoekacties</a>
+                <a href="#">Over ons</a>
+            </div>
+            <div class="mb__header_language">
+                <div class="mb__header_block" id="lang_Dutch">
+                    <img src="img/icons/flag_dutch.svg" id="image__Dutch" alt="Lang">
+                    <p>NL</p>
+                </div>
+                <div class="mb__header_block" id="lang_English">
+                    <img src="img/icons/flag_eng.svg" id="image__English" alt="Lang">
+                    <p>EN</p>
+                </div>
+                <div class="mb__header_block" id="lang_Deutsch">
+                    <img src="img/icons/flag_deu.svg" id="image__Deutsch" alt="Lang">
+                    <p>DE</p>
+                </div>
+            </div>
+        </div>
+        <!-- MOBILE HEADER END -->
+
+        <!-- MOBILE STICKY HEADER -->
+        <div class="mb__header mb__header_sticky">
+            <div class="mb__header_top">
+                <img src="img/logotype.svg" alt="Logotype">
+                <div class="mb__header_icons">
+                    <a href="#"><img src="img/icon_facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="img/icon_insta.svg" alt="Instagram"></a>
+                </div>
+                <div class="mb__header_lang">
+                    <img src="img/mb_lang.svg" alt="Mobile Lang">
+                </div>
+            </div>
+            <div class="mb__header_menu">
+                <a href="#">Home</a>
+                <a href="#">Huidige Zoekacties</a>
+                <a href="#">Over ons</a>
+            </div>
+            <button class="mb__sticky_header_button">Meteen zoekactie starten</button>
+        </div>
+        <!-- MOBILE HEADER END -->
+
+        <!-- CURRENT MAP -->
+
+        <section class="current__map">
+            <div class="section__top">
+                <h1 class="section__title">Huidige Zoekacties</h1>
+                <p class="section__subtitle">Hier komt een beschrijvingstekst</p>
+            </div>
+
+            <!-- MAP -->
+            <div class="search__map">
+                <div class="search__map_container">
+                    <div id="current_map"></div>
+                    <div class="current__map_form">
+                        <div class="current_map_nav">
+                            <img id="map_plus" src="img/homepage/minus.svg" alt="Plus">
+                            <img src="img/homepage/gate.svg" alt="Gate">
+                            <img id="map_minus" src="img/homepage/plus.svg" alt="Minus">
+                        </div>
+                        <p>Alle Zoekopdrachten</p>
+                        <div class="current__map_buttons">
+                            <button class="current_left_b current__button_active">RECENT</button>
+                            <button class="current_right_b">ALLE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRENT MAP END -->
+
+
+        <!-- FOOTER -->
+
+        <footer>
+            <div class="container">
+                <div class="footer__info">
+                    <img src="img/footer_logo.svg" alt="Footer Logo">
+                    <div class="footer__info_adress">
+                        <div>
+                            <img src="img/icons/email.svg" alt="email">
+                            <span><a href="mailto:info@kattenradar.nl" class="phone">info@kattenradar.nl</a></span>
+                        </div>
+                        <div>
+                            <img src="img/icons/phone.svg" alt="phone">
+                            <span><a class="phone" href="tel:+31627655321">+31 6 276 553 21</a></span>
+                        </div>
+                    </div>
+                    <div class="footer__info_adress">
+                        <div>
+                            <img src="img/icons/map_footer.svg" alt="map">
+                            <span>Amsterdam, Victorieplein 27a1, 1079 KM</span>
+                        </div>
+                        <div>
+                            <img src="img/icons/bag.svg" alt="bag">
+                            <span>KvK-nummer: 71505083</span>
+                        </div>
+                    </div>
+                    <div class="footer__info_links">
+                        <p class="footer_dashboard">Naar dashboard</p>
+                        <p class="footer_contact" href="#">Neem contact met ons op</p>
+                        <a href="#">KattenRadar Blog</a>
+                    </div>
+                </div>
+                <div class="footer_links">
+                    <a href="#">Terms of service</a>
+                    <a href="#">Privacy policy</a>
+                </div>
+                <p class="footer_bottom_text">© kattenradar, Inc. 2021. We love our users!</p>
+            </div>
+        </footer>
+        <!-- MOBILE FOOTER -->
+        <div class="mb_footer">
+            <div class="mb__footer_header">
+                <a href="#">Contact opnemen</a>
+                <a href="#">Naar dashboard</a>
+            </div>
+            <div class="mb__footer_info">
+                <div class="footer__info_adress">
+                    <div>
+                        <img src="img/icons/email.svg" alt="email">
+                        <span><a href="mailto:info@kattenradar.nl" class="phone">info@kattenradar.nl</a></span>
+                    </div>
+                    <div>
+                        <img src="img/icons/phone.svg" alt="phone">
+                        <span><a class="phone" href="tel:+31627655321">+31 6 276 553 21</a></span>
+                    </div>
+                </div>
+                <div class="footer__info_adress">
+                    <div>
+                        <img src="img/icons/map_footer.svg" alt="map">
+                        <span>Amsterdam, Victorieplein 27a1, 1079 KM</span>
+                    </div>
+                    <div>
+                        <img src="img/icons/bag.svg" alt="bag">
+                        <span>KvK-nummer: 71505083</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb__footer_foot">
+                <a href="#">Privacy policy</a>
+                <a href="#">Blog</a>
+                <a href="#">Terms of service</a>
+            </div>
+            <hr class="mb__footer_line">
+            <p class="mb__footer_text">© kattenradar, Inc. 2021. We love our users!</p>
+        </div>
+    </div>
+    <!-- FEEDBACK -->
+    <div class="feedback">
+    </div>
+    <div class="feedback__popup">
+        <div class="feedback_close">
+            <img class="popup_close" src="img/homepage/close.svg" alt="Close">
+        </div>
+        <p>Neem contact op</p>
+        <div class="feedback__form">
+            <div class="feedback__form_block">
+                <p>Email <span> *</span></p>
+                <input type="email" id="form__email" placeholder="Email">
+            </div>
+            <div class="feedback__form_block">
+                <p>Telefoon</p>
+                <input type="phone" id="form__phone" placeholder="Telefoonnummer (optioneel)">
+            </div>
+        </div>
+        <div class="feedback__textarea">
+            <p>Bericht</p>
+            <textarea name="message" id="message"></textarea>
+        </div>
+        <input type="hidden" name="token" value="" id="token">
+        <p class="form__send_status">Your message has been successfully sent!</p>
+        <button class="feedback__send" class="g-recaptcha" data-sitekey="6LdBDO4dAAAAAHksjb-qcwb7j-Ke3cEJwkBgIF4C" data-callback='onSubmit' data-action='submitForm'>Versturen</button>
+        <p class="feedback__capcha_info">This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+            <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+        </p>
+    </div>
+    <!-- DASHBOARD POPUP -->
+    <div class="dashboard__popup">
+        <div class="feedback_close">
+            <img class="popup_close" src="img/homepage/close.svg" alt="Close">
+        </div>
+        <div class="dashboard__popup_start">
+            <p class="dashboard__title">To dashboard</p>
+            <p class="dashboard__desc">Je kunt het dashboard van de zoekactie openen door op 'naar dashboard' te klikken in de emails van KattenRadar.</p>
+            <p class="dashboard__desc" style="opacity: 0.6;">Kan je het niet vinden? Vul hier je email of telefoonnummer in, en wij sturen je de link nogmaals toe.</p>
+
+            <input type="email" name="email" id="dashboardEmail" placeholder="Email of telefoonnummer">
+            <button id="dashboard__send">Ontvang link naar dashboard</button>
+        </div>
+        <div class="dashboard__popup_done" style="display: none;">
+            <p class="dashboard__title">Success!</p>
+            <p class="dashboard__desc">We hebben je de nieuwe link gestuurd, check je e-mail</p>
+            <button class="dashboard__top_button">Naar startpagina</button>
+        </div>
+
+        <div class="dashboard__popup_failed" style="display: none;">
+            <p class="dashboard__title">Failed!</p>
+            <p class="dashboard__desc">Deze e-mail heeft geen gekoppelde zoekopdrachten.</p>
+            <button id="dashboard__failed_repeat">Probeer het opnieuw</button>
+            <button class="dashboard__button dashboard__top_button">Naar startpagina</button>
+        </div>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="js/leaflet-gesture-handling.min.js"></script>
+    <script src="js/default_script.js"></script>
+    <script>
+        var recentSearches = {};
+        var recentFound = [];
+        var recentNotFound = [];
+
+        var allFound = [];
+        var allNotFound = [];
+        $.ajax({
+            url: 'https://server.kattenradar.nl/test-rs',
+            method: 'get',
+            dataType: 'json',
+            async: false,
+            data: recentSearches,
+            success: function(data) {
+                recentFound = data.Found;
+                recentNotFound = data.notFound;
+
+                console.log(recentFound)
+                console.log(recentNotFound)
+            }
+        });
+
+        $.ajax({
+            url: 'https://server.kattenradar.nl/test-as',
+            method: 'get',
+            dataType: 'json',
+            async: false,
+            data: recentSearches,
+            success: function(data) {
+                allFound = data.Found;
+                allNotFound = data.notFound;
+            }
+        });
+
+
+        /* LEAFLET MAP */
+
+        var secondMap = L.map('current_map', {
+            zoomControl: false,
+            gestureHandling: true
+        }).setView([52.1231241, 5.2773372], 8);
+
+        // zoom in function
+        $('#map_minus').click(function() {
+            secondMap.setZoom(secondMap.getZoom() + 1)
+        });
+
+
+        // zoom out function
+        $('#map_plus').click(function() {
+            secondMap.setZoom(secondMap.getZoom() - 1)
+        });
+        //https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png
+        //https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2FuaXN0cmF5IiwiYSI6ImNreGVueTljbTEzdTAybm1tYXRzaHBnaTYifQ.Ux9ySMRvhgcwFd7_gPXCWg
+        //pk.eyJ1Ijoic2FuaXN0cmF5IiwiYSI6ImNreGVueTljbTEzdTAybm1tYXRzaHBnaTYifQ.Ux9ySMRvhgcwFd7_gPXCWg
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2FuaXN0cmF5IiwiYSI6ImNreGVueTljbTEzdTAybm1tYXRzaHBnaTYifQ.Ux9ySMRvhgcwFd7_gPXCWg', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1Ijoic2FuaXN0cmF5IiwiYSI6ImNreGVueTljbTEzdTAybm1tYXRzaHBnaTYifQ.Ux9ySMRvhgcwFd7_gPXCWg',
+        }).addTo(secondMap);
+
+        var mapMarker = L.icon({
+            iconUrl: 'img/homepage/recentSearches.svg',
+            iconSize: [35, 46],
+            iconAnchor: [17, 46],
+            popupAnchor: [-3, -45] // point from which the popup should open relative to the iconAnchor
+        });
+        var mapMarkerGreen = L.icon({
+            iconUrl: 'img/homepage/allSearches.svg',
+            iconSize: [35, 46],
+            iconAnchor: [17, 46],
+            popupAnchor: [-3, -45] // point from which the popup should open relative to the iconAnchor
+        });
+
+        /* MAP MARKERS */
+
+        var markersList = [];
+        var allMarkers = [];
+        $.each(recentNotFound, (key, value) => {
+            markerNotFoundRed = L.marker([Number(recentNotFound[key].lat), Number(recentNotFound[key].lng)], {
+                icon: mapMarker,
+                title: recentNotFound[key].picLink
+            }).addTo(secondMap);
+            markersList.push(markerNotFoundRed);
+            console.log('35')
+        })
+
+        $.each(markersList, (key, value) => {
+            markersList[key].bindPopup("<div class='map__popup_block'> <img class='map_popup__image' src='" + markersList[key].options.title + "'><div class='map__popup_bottom'><a href='#'><button class='map__popup_button'>Stuur tip!</button></a></div></div>", {
+                closeButton: false
+            });
+            markersList[key].on('mouseover', function(e) {
+                this.openPopup();
+            });
+            markersList[key].on('mouseout', function(e) {
+                setTimeout(() => {
+                    this.closePopup();
+                }, 5000);
+            });
+        })
+
+        var greenMarker = [];
+
+        $.each(recentFound, (key, value) => {
+            markerFoundGreen = L.marker([Number(recentFound[key].lat), Number(recentFound[key].lng)], {
+                icon: mapMarkerGreen,
+                title: recentFound[key].picLink
+            }).addTo(secondMap);
+            allMarkers.push(markerFoundGreen);
+            greenMarker.push(markerFoundGreen);
+        })
+
+        allMarkersPopup()
+
+        function allMarkersPopup() {
+            $.each(allMarkers, (key, value) => {
+                allMarkers[key].bindPopup("<div class='map__popup_block map__popup_green'> <img class='map_popup__image' src='" + allMarkers[key].options.title + "'><div class='map__popup_bottom popup__green'><a href='#'><button class='map__popup_green map__popup_button'>Stuur tip!</button></a></div></div></div>", {
+                    closeButton: false
+                });
+                $('.test').hide()
+                allMarkers[key].on('mouseover', function(e) {
+                    this.openPopup();
+                });
+                allMarkers[key].on('mouseout', function(e) {
+                    setTimeout(() => {
+                        this.closePopup();
+                    }, 5000);
+                });
+            })
+        }
+
+        /* MAP MARKERS END */
+
+        /* ALL MARKERS START */
+
+        var AllmarkersList = [];
+        var allMarker = [];
+
+
+        $('.current_right_b').click(function() {
+            $.each(greenMarker, (key, value) => {
+                secondMap.removeLayer(greenMarker[key]);
+            })
+
+            $.each(allNotFound, (key, value) => {
+                markerAllNotFound = L.marker([Number(allNotFound[key].lat), Number(allNotFound[key].lng)], {
+                    icon: mapMarker,
+                    title: allNotFound[key].picLink
+                }).addTo(secondMap);
+                AllmarkersList.push(markerAllNotFound);
+            })
+            $.each(AllmarkersList, (key, value) => {
+                AllmarkersList[key].bindPopup("<div class='map__popup_block'><img class='map_popup__image' src='" + AllmarkersList[key].options.title + "'><div class='map__popup_bottom'><a href='#'><button class='map__popup_button'>Stuur tip!</button></a></div></div>", {
+                    closeButton: false
+                });
+                AllmarkersList[key].on('mouseover', function(e) {
+                    this.openPopup();
+                });
+                AllmarkersList[key].on('mouseout', function(e) {
+                    setTimeout(() => {
+                        this.closePopup();
+                    }, 5000);
+                });
+            })
+            $.each(allMarker, (key, value) => {
+                allMarker[key].bindPopup("<div class='map__popup_block'><img class='map_popup__image' src='" + allMarker[key].options.title + "'><div class='map__popup_bottom'><a href='#'><button class='map__popup_button'>Stuur tip!</button></a></div></div>", {
+                    closeButton: false
+                });
+                $('.green__popup').css('background-color', 'green !important')
+                allMarker[key].on('mouseover', function(e) {
+                    this.openPopup();
+                });
+                allMarker[key].on('mouseout', function(e) {
+                    setTimeout(() => {
+                        this.closePopup();
+                    }, 5000);
+                });
+            })
+        })
+
+        $('.current_left_b').click(function() {
+            $.each(recentFound, (key, value) => {
+                markerFoundGreen = L.marker([Number(recentFound[key].lat), Number(recentFound[key].lng)], {
+                    icon: mapMarkerGreen,
+                    title: recentFound[key].picLink
+                }).addTo(secondMap);
+                allMarkers.push(markerFoundGreen);
+                greenMarker.push(markerFoundGreen);
+            })
+            allMarkersPopup()
+            $.each(allMarker, (key, value) => {
+                secondMap.removeLayer(allMarker[key]);
+            })
+            $.each(AllmarkersList, (key, value) => {
+                secondMap.removeLayer(AllmarkersList[key]);
+            })
+        })
+
+        /* ALL MARKERS END */
+    </script>
+</body>
+
+</html>

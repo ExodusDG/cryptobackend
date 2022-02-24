@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KattenRadar - Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/default_styles.css">
+    <link rel="stylesheet" href="style/inner_styles.css">
+</head>
+
+<body>
+    <!-- STICKY HEADER -->
+    <div class="sticky__container">
+        <div class="header" id="sticky__header">
+            <ul>
+                <li>
+                    <a href="#"> <img src="img/logotype.svg" alt="Logotype"></a>
+                </li>
+                <li>
+                    <ul class="header__menu_list">
+                        <li>
+                            <a href="/home">Home</a>
+                        </li>
+                        <li>
+                            <a href="/searches">Huidige Zoekacties</a>
+                        </li>
+                        <li>
+                            <a href="/about">Over ons</a>
+                        </li>
+                        <li class="lang__wrapper" id="sticky__lang__wrapper">
+                            <div class="header__current_lang">
+                                <div><img class="icon__flag" id="icon__flag_sticky" src="img/icons/flag_dutch.svg" alt="Flag"><span id="language_sticky">NL</span><img class="header__down" src="img/icons/header_down.svg" alt="Down"></div>
+                            </div>
+                            <div class="header__lang">
+                                <div><img class="icon__flag" id="Dutch" src="img/icons/flag_dutch.svg" alt="Flag"> NL
+                                </div>
+                                <div><img class="icon__flag" id="English" src="img/icons/flag_eng.svg" alt="Flag"> EN
+                                </div>
+                                <div><img class="icon__flag" id="Deutsch" src="img/icons/flag_deu.svg" alt="Flag"> DE
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="header__start_search">Zoekactie starten</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- STICKY HEADER END -->
+    <div class="blur__wrapper">
+        <!-- HEADER -->
+        <div class="header default_header">
+            <ul>
+                <li>
+                    <a href="#"> <img src="img/logotype.svg" alt="Logotype"></a>
+                </li>
+                <li>
+                    <ul class="header__menu_list">
+                        <li>
+                            <a href="/home">Home</a>
+                        </li>
+                        <li>
+                            <a href="/searches">Huidige Zoekacties</a>
+                        </li>
+                        <li>
+                            <a href="/about">Over ons</a>
+                        </li>
+                        <li class="lang__wrapper">
+                            <div class="header__current_lang">
+                                <div><img class="icon__flag" id="icon__flag" src="img/icons/flag_dutch.svg" alt="Flag"><span id="language">NL</span><img class="header__down" src="img/icons/header_down.svg" alt="Down"></div>
+                            </div>
+                            <div class="header__lang">
+                                <div><img class="icon__flag" id="Dutch" src="img/icons/flag_dutch.svg" alt="Flag"> NL
+                                </div>
+                                <div><img class="icon__flag" id="English" src="img/icons/flag_eng.svg" alt="Flag"> EN
+                                </div>
+                                <div><img class="icon__flag" id="Deutsch" src="img/icons/flag_deu.svg" alt="Flag"> DE
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="header__start_search">Zoekactie starten</button>
+                </li>
+            </ul>
+        </div>
+        <!-- HEADER END -->
+        <!-- MOBILE HEADER -->
+        <div class="mb__header">
+            <div class="mb__header_top">
+                <img src="img/logotype.svg" alt="Logotype">
+                <div class="mb__header_icons">
+                    <a href="#"><img src="img/icon_facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="img/icon_insta.svg" alt="Instagram"></a>
+                </div>
+                <div class="mb__header_lang">
+                    <img class="mb__header_icon" src="img/icons/flag_dutch.svg" alt="Mobile Lang">
+                    <p><img src="img/icons/down.svg" alt="Mobile Lang Down"></p>
+                </div>
+            </div>
+            <div class="mb__header_menu">
+                <a href="#" class="header__menu_active">Home</a>
+                <a href="#">Huidige Zoekacties</a>
+                <a href="#">Over ons</a>
+            </div>
+            <div class="mb__header_language">
+                <div class="mb__header_block" id="lang_Dutch">
+                    <img src="img/icons/flag_dutch.svg" id="image__Dutch" alt="Lang">
+                    <p>NL</p>
+                </div>
+                <div class="mb__header_block" id="lang_English">
+                    <img src="img/icons/flag_eng.svg" id="image__English" alt="Lang">
+                    <p>EN</p>
+                </div>
+                <div class="mb__header_block" id="lang_Deutsch">
+                    <img src="img/icons/flag_deu.svg" id="image__Deutsch" alt="Lang">
+                    <p>DE</p>
+                </div>
+            </div>
+        </div>
+        <!-- MOBILE HEADER END -->
+
+        <!-- MOBILE STICKY HEADER -->
+        <div class="mb__header mb__header_sticky">
+            <div class="mb__header_top">
+                <img src="img/logotype.svg" alt="Logotype">
+                <div class="mb__header_icons">
+                    <a href="#"><img src="img/icon_facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="img/icon_insta.svg" alt="Instagram"></a>
+                </div>
+                <div class="mb__header_lang">
+                    <img src="img/mb_lang.svg" alt="Mobile Lang">
+                </div>
+            </div>
+            <div class="mb__header_menu">
+                <a href="#">Home</a>
+                <a href="#">Huidige Zoekacties</a>
+                <a href="#">Over ons</a>
+            </div>
+            <button class="mb__sticky_header_button">Meteen zoekactie starten</button>
+        </div>
+        <!-- MOBILE HEADER END -->
+
+        <!-- BLOG CONTENT -->
+
+        <!-- HEADER -->
+        <section class="blog_page">
+            <div class="header_main">
+
+                <div class="header_background">
+
+                    <!-- MAIN IMAGE -->
+                    <img src="img/blog/blog_page/header_photo.png" alt="">
+                    <!-- MAIN IMAGE END-->
+
+                </div>
+
+                <div class="header_gradient"><img src="img/blog/blog_page/gradient.svg" alt=""></div>
+            </div>
+            <div class="blog__container">
+                <div class="header_main_contents">
+
+                    <!-- HEADER TEXT -->
+                    <h1>Waarom katten verdwaald zijn</h1>
+                    <!-- HEADER TEXT END -->
+
+                    <div class="header_contents_subtitle">
+                        <h1>Categorie 1</h1>
+                        <p>Gepubliceerd 23 Oktober 2021</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- HEADER END -->
+
+
+        <section class="blog_page_content">
+            <div class="blog__container">
+                <div class="page_blocks">
+                    <div class="quik_links">
+                        <div class="blog__navigation_wrapper">
+                            <h1>Snelle links</h1>
+                            <!-- BLOG NAVIGATION -->
+                            <div class="blog__navigation__links">
+
+                            </div>
+                            <!-- BLOG NAVIGATION END -->
+                        </div>
+                    </div>
+                    <div class="page_info">
+
+                        <!--  HEADER TEXT -->
+                        <h1>Waarom katten verdwaald zijn</h1>
+                        <!--  HEADER END -->
+
+                        <!-- PARAGRAPH -->
+                        <p>Katten hebben meestal een eigen territorium in en rond het huis, maar de ene kat is avontuurlijk dan de ander, zegt Willem Verdonck, katachtigenexpert van Dierenpark Amersfoort. Sommige diertjes gaan bewust weg. Dat kan liggen
+                            aan het ras, en soms gewoon aan het karakter. </p>
+                        <!-- PARAGRAPH  END -->
+
+                        <!-- SUBTITLE -->
+                        <h2>1. Waarom loopt mijn kat weg, hij heeft het toch goed hier?</h2>
+                        <!-- SUBTITLE END -->
+
+
+                        <p>Katten hebben meestal een eigen territorium in en rond het huis, maar de ene kat is avontuurlijk dan de ander, zegt Willem Verdonck, katachtigenexpert van Dierenpark Amersfoort. Sommige diertjes gaan bewust weg. Dat kan liggen
+                            aan het ras, en soms gewoon aan het karakter.
+                        </p>
+                        <p>"Als er kleine veranderingen in het gezin optreden, kan een kat besluiten om weg te gaan", zegt Verdonck. "Dat kan ook gebeuren als een andere kat in zijn territorium komt of hem bedreigt. Bijvoorbeeld als de buren een nieuwe kat
+                            hebben waar hij niet van is gediend."</p>
+                        <p>Ook kunnen katten plotseling uit hun doen raken en daardoor hun territorium verlaten. Verdonck: "Als ze schrikken van bijvoorbeeld een auto en ze rennen een onbekende straat in, dan kunnen verdwalen."
+                        </p>
+
+                        <!-- SMALL IMAGE -->
+                        <div class="blog__small_image">
+                            <img src="img/blog/blog_page/title_1.png" alt="Blog Small Image">
+                        </div>
+                        <!-- SMALL IMAGE END -->
+
+                        <h2>2. Kan ik iets doen om te voorkomen dat Poekie bij me wegloopt?
+                        </h2>
+                        <p>Laat een nieuwe, harige huisgenoot sowieso niet te snel naar buiten gaan. "Wacht met jonge katjes minimaal vier tot zes weken", zegt Rianne Steenbeek van Dierenasiel Crailo. "Dat geldt ook voor een kat die je uit het asiel haalt."
+                        </p>
+                        <p>Laat ze op vaste tijden naar buiten gaan. "Katten zijn echte gewoontedieren", zegt Steenbeek. "En zorg ervoor dat je een 'beloning' klaar hebt staan als ze weer thuiskomen. Als je rond dezelfde tijd eten klaar hebt staan, zullen
+                            ze sneller terugkomen, omdat ze weten dat ze dan wat krijgen."
+                        </p>
+
+                        <!-- QUOTE -->
+                        <div class="quote">
+                            <img src="img/blog/blog_page/quote.svg" alt="quote">
+                            <p class="quote__text">Meer dan 40.000 van de ruim 76.000 vermiste huisdieren vorig jaar zijn niet teruggevonden.</p>
+                        </div>
+                        <!-- QUOTE END -->
+
+                        <h2>3. Mijn poes gaat er toch wel vandoor, hoe voorkom ik dat hij zoek raakt?
+                        </h2>
+                        <p>Je kunt je kat laten chippen. Er wordt dan een chipje onder de huid van je poes gezet en daar kun je jouw gegevens aan koppelen. Zorg wel dat je de chip ook echt registreert en het doorgeeft als je verhuist. Anders weet het asiel
+                            of de dierenambulance niet dat de gevonden poes van jou is.
+                        </p>
+                        <p>Hou je van gadgets? Dan kun je een gps-halsbandje voor Simba of Lola aanschaffen. "Die zijn in opkomst", vertelt Steenbeek. "Het is een handige manier voor het baasje om te zien waar je kat uithangt."
+                        </p>
+
+                        <!-- BIG IMAGE -->
+                        <div class="big__image">
+                            <img src="img/blog/blog_page/title_3.png" alt="Blog Image">
+                        </div>
+                        <!-- BIG IMAGE END -->
+
+                        <h2>4. Mijn ongechipte poezewoes is vermist! Hoe vind ik hem nu terug?!
+                        </h2>
+                        <p>Ga je zelf op zoek, doe dat vooral 's avonds als het donker is en rustig op straat, tipt Schotel. "Loop rond, roep hem en rammel eventueel met brokjes. Luister dan heel goed. Een vermiste kat kan bang zijn en zich verstoppen, maar
+                            als het donker en stil is, heb je meer kans dat ze gaan reageren en jij ze ook hoort."
+                        </p>
+                        <li>Maak een poster en verspreid die zoveel mogelijk.</li>
+                        <li>Zorg dat je een hele goede foto hebt en maak een gedetailleerde beschrijving</li>
+                        <li>Zegt Jolande Schotel van Amivedi, het meldpunt voor vermiste huisdieren</li>
+                        <li>Sommige gemeenten doen moeilijk, dus let op waar je de poster op mag hangen.</li>
+                        <li>Maar denk aan lantaarnpalen en lokale supermarkten.</li>
+                        <p>Vraag je buren of ze willen kijken in schuurtjes of in hun eigen tuin. Misschien zit het dier daar ergens verstopt.</p>
+
+                        <!-- CTA ELEMENT -->
+                        <div class="cta">
+                            <img src="img/blog/blog_page/cta.svg" alt="CTA">
+                            <div class="cta__content">
+                                <p>Abonneer je op onze instagram om de vermiste katten te helpen vinden</p>
+                                <div class="cta__content_line">
+                                    <img src="img/blog/blog_page/cta_line.svg" alt="CTA LINE">
+                                </div>
+                                <a href="#"><button class="cta__button">Abonneren
+                                        <img src="img/homepage/button-right.svg" alt="Right">
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- CTA ELEMENT END -->
+
+
+                        <h2>5. Mijn poes gaat er toch wel vandoor, hoe voorkom ik dat hij zoek raakt?
+                        </h2>
+                        <p>Je kunt je kat laten chippen. Er wordt dan een chipje onder de huid van je poes gezet en daar kun je jouw gegevens aan koppelen. Zorg wel dat je de chip ook echt registreert en het doorgeeft als je verhuist. Anders weet het asiel
+                            of de dierenambulance niet dat de gevonden poes van jou is.
+                        </p>
+                        <p>Hou je van gadgets? Dan kun je een gps-halsbandje voor Simba of Lola aanschaffen. "Die zijn in opkomst", vertelt Steenbeek. "Het is een handige manier voor het baasje om te zien waar je kat uithangt."
+                        </p>
+
+                        <!-- BLOG VIDEO -->
+                        <div class="blog__video">
+
+                            <!-- IFRAME CODE HERE -->
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/RrwJaUiU6mE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!-- IFRAME CODE HERE END-->
+
+                        </div>
+                        <!-- BLOG VIDEO END -->
+
+                        <!-- AUTHOR -->
+                        <div class="blog__author">
+                            <div>
+                                <img src="img/blog/blog_page/twitter_david.png" alt="Author">
+                            </div>
+                            <div>
+                                <h3>David</h3>
+                                <h4>Na het KattenRadar-project te hebben uitgevoerd, begint David een blog te schrijven op basis van zijn eigen ervaring. Maak contact met hem op <a href="#">Twitter</a>
+                                </h4>
+                            </div>
+                        </div>
+                        <!-- AUTHOR END -->
+                    </div>
+                </div>
+        </section>
+        <section class="blog_page_slider">
+            <div class="blog__container">
+                <div class="read_also_plot">
+                    <h1>Lees ook</h1>
+                </div>
+                <div class="read_also_slider">
+                    <div class="blog__block">
+                        <img src="img/blog/cat 1.png" alt="">
+                        <div class="blog__block_contents">
+                            <p class="categorie_2">Categorie 2</p>
+                            <h1>Waar te beginnen met het zoeken naar een kat?</h1>
+                            <p class="blog__block_subtitle">Is je kat al iets langer verdwenen, ga dan zelf kijken in het dierenasiel. Op de website staan enkel de adopteerbare katten. Een kat die gevonden is zal pas na vier weken</p>
+                            <div>
+                                <p class="blog__block_date">21 Oktober 2021</p>
+                                <a href="#">Artikel lezen <img src="img/blog/arrow.svg" alt=""> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog__block">
+                        <img src="img/blog/cat 2.png" alt="">
+                        <div class="blog__block_contents">
+                            <p class="categorie_1">Categorie 1</p>
+                            <h1>De juiste relatie met de kat</h1>
+                            <p class="blog__block_subtitle">Onderzoek heeft aangetoond dat de liefde, ook bij de kat, van twee kanten moet komen. Als je kat aandacht vraagt en jij negeert haar het grootste deel van de tijd moet je niet gek staan te kijken als je kat</p>
+                            <div>
+                                <p class="blog__block_date">19 Oktober 2021</p>
+                                <a href="#">Artikel lezen <img src="img/blog/arrow.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog__block">
+                        <img src="img/blog/cat 3.png" alt="">
+                        <div class="blog__block_contents">
+                            <p class="categorie_2">Categorie 2</p>
+                            <h1>Goede voeding van de kat</h1>
+                            <p class="blog__block_subtitle">Nederland telt circa 2.600.000 katten. Daarmee is dit eigenzinnige beestje veruit het populairste huisdier. Je wilt er natuurlijk zeker van zijn dat je kat de juiste voeding krijgt. Maar welk voer is goed?</p>
+                            <div>
+                                <p class="blog__block_date">22 Oktober 2021</p>
+                                <a href="#">Artikel lezen <img src="img/blog/arrow.svg" alt=""> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider_buttom">
+                <div class="slider_buttom_left">
+                    <img src="img/blog/blog_page/button_left.svg" alt="">
+                </div>
+                <div class="slider_buttom_right">
+                    <img src="img/blog/blog_page/button_right.svg" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER -->
+
+        <footer>
+            <div class="container">
+                <div class="footer__info">
+                    <img src="img/footer_logo.svg" alt="Footer Logo">
+                    <div class="footer__info_adress">
+                        <div>
+                            <img src="img/icons/email.svg" alt="email">
+                            <span><a href="mailto:info@kattenradar.nl" class="phone">info@kattenradar.nl</a></span>
+                        </div>
+                        <div>
+                            <img src="img/icons/phone.svg" alt="phone">
+                            <span><a class="phone" href="tel:+31627655321">+31 6 276 553 21</a></span>
+                        </div>
+                    </div>
+                    <div class="footer__info_adress">
+                        <div>
+                            <img src="img/icons/map_footer.svg" alt="map">
+                            <span>Amsterdam, Victorieplein 27a1, 1079 KM</span>
+                        </div>
+                        <div>
+                            <img src="img/icons/bag.svg" alt="bag">
+                            <span>KvK-nummer: 71505083</span>
+                        </div>
+                    </div>
+                    <div class="footer__info_links">
+                        <p class="footer_dashboard">Naar dashboard</p>
+                        <p class="footer_contact" href="#">Neem contact met ons op</p>
+                        <a href="#">KattenRadar Blog</a>
+                    </div>
+                </div>
+                <div class="footer_links">
+                    <a href="#">Terms of service</a>
+                    <a href="#">Privacy policy</a>
+                </div>
+                <p class="footer_bottom_text">© kattenradar, Inc. 2021. We love our users!</p>
+            </div>
+        </footer>
+        <!-- MOBILE FOOTER -->
+        <div class="mb_footer">
+            <div class="mb__footer_header">
+                <a href="#">Contact opnemen</a>
+                <a href="#">Naar dashboard</a>
+            </div>
+            <div class="mb__footer_info">
+                <div class="footer__info_adress">
+                    <div>
+                        <img src="img/icons/email.svg" alt="email">
+                        <span><a href="mailto:info@kattenradar.nl" class="phone">info@kattenradar.nl</a></span>
+                    </div>
+                    <div>
+                        <img src="img/icons/phone.svg" alt="phone">
+                        <span><a class="phone" href="tel:+31627655321">+31 6 276 553 21</a></span>
+                    </div>
+                </div>
+                <div class="footer__info_adress">
+                    <div>
+                        <img src="img/icons/map_footer.svg" alt="map">
+                        <span>Amsterdam, Victorieplein 27a1, 1079 KM</span>
+                    </div>
+                    <div>
+                        <img src="img/icons/bag.svg" alt="bag">
+                        <span>KvK-nummer: 71505083</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb__footer_foot">
+                <a href="#">Privacy policy</a>
+                <a href="#">Blog</a>
+                <a href="#">Terms of service</a>
+            </div>
+            <hr class="mb__footer_line">
+            <p class="mb__footer_text">© kattenradar, Inc. 2021. We love our users!</p>
+        </div>
+        </div>
+        <!-- FEEDBACK -->
+        <div class="feedback">
+        </div>
+        <div class="feedback__popup">
+            <div class="feedback_close">
+                <img class="popup_close" src="img/homepage/close.svg" alt="Close">
+            </div>
+            <p>Neem contact op</p>
+            <div class="feedback__form">
+                <div class="feedback__form_block">
+                    <p>Email <span> *</span></p>
+                    <input type="email" id="form__email" placeholder="Email">
+                </div>
+                <div class="feedback__form_block">
+                    <p>Telefoon</p>
+                    <input type="phone" id="form__phone" placeholder="Telefoonnummer (optioneel)">
+                </div>
+            </div>
+            <div class="feedback__textarea">
+                <p>Bericht</p>
+                <textarea name="message" id="message"></textarea>
+            </div>
+            <input type="hidden" name="token" value="" id="token">
+            <p class="form__send_status">Your message has been successfully sent!</p>
+            <button class="feedback__send" class="g-recaptcha" data-sitekey="6LdBDO4dAAAAAHksjb-qcwb7j-Ke3cEJwkBgIF4C" data-callback='onSubmit' data-action='submitForm'>Versturen</button>
+            <p class="feedback__capcha_info">This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </p>
+        </div>
+        <!-- DASHBOARD POPUP -->
+        <div class="dashboard__popup">
+            <div class="feedback_close">
+                <img class="popup_close" src="img/homepage/close.svg" alt="Close">
+            </div>
+            <div class="dashboard__popup_start">
+                <p class="dashboard__title">To dashboard</p>
+                <p class="dashboard__desc">Je kunt het dashboard van de zoekactie openen door op 'naar dashboard' te klikken in de emails van KattenRadar.</p>
+                <p class="dashboard__desc" style="opacity: 0.6;">Kan je het niet vinden? Vul hier je email of telefoonnummer in, en wij sturen je de link nogmaals toe.</p>
+
+                <input type="email" name="email" id="dashboardEmail" placeholder="Email of telefoonnummer">
+                <button id="dashboard__send">Ontvang link naar dashboard</button>
+            </div>
+            <div class="dashboard__popup_done" style="display: none;">
+                <p class="dashboard__title">Success!</p>
+                <p class="dashboard__desc">We hebben je de nieuwe link gestuurd, check je e-mail</p>
+                <button class="dashboard__top_button">Naar startpagina</button>
+            </div>
+
+            <div class="dashboard__popup_failed" style="display: none;">
+                <p class="dashboard__title">Failed!</p>
+                <p class="dashboard__desc">Deze e-mail heeft geen gekoppelde zoekopdrachten.</p>
+                <button id="dashboard__failed_repeat">Probeer het opnieuw</button>
+                <button class="dashboard__button dashboard__top_button">Naar startpagina</button>
+            </div>
+        </div>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/default_script.js"></script>
+
+</body>
+
+</html>
