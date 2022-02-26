@@ -2,6 +2,7 @@
 
 
 $('.auth__button').click(function() {
+    var test;
     if ($('#username').val().length != 0 && $('#password').val().length != 0) {
         var userEmail = $('#username').val();
         var userPassword = $('#password').val()
@@ -24,10 +25,10 @@ $('.auth__button').click(function() {
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send(data);
+
     } else {
         alert('Enter data for all fields!')
     }
-
 
     //   $('.crypto__auth').hide(500)
 })
