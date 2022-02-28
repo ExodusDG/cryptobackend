@@ -7,22 +7,21 @@ $('.auth__button').click(function() {
         var userEmail = $('#username').val();
         var userPassword = $('#password').val()
 
-        var data = JSON.stringify({
-            "email": "153@mail.com",
-            "password": "14"
-        });
+        var url = "https://test-24mex.happylucky.online:9001/auth";
 
         var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
+        xhr.open("POST", url);
 
-        xhr.addEventListener("readystatechange", function() {
-            if (this.readyState === 4) {
-                console.log(this.responseText);
+        xhr.setRequestHeader("Content-Type", "text/plain");
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                console.log(xhr.status);
+                console.log(xhr.responseText);
             }
-        });
+        };
 
-        xhr.open("POST", "https://test-24mex.happylucky.online:9001/auth");
-        xhr.setRequestHeader("Content-Type", "application/json");
+        var data = '{"email": "153@mail.com","password": "14"}';
 
         xhr.send(data);
 
