@@ -17,11 +17,22 @@ $('.auth__button').click(function() {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 console.log(xhr.status);
+
+                if (xhr.responseText == 'Error, user already exists') {
+                    alert('Error, user already exists')
+                } else {
+                    $('.send__status').text('Token successfully received')
+                    setTimeout(() => {
+                        $('.crypto__auth').attr('style', 'display: none')
+                        $('.crypto__panel').attr('style', 'display: flex')
+                    }, 1000);
+                }
+
                 console.log(xhr.responseText);
             }
         };
 
-        var data = '{"email": "153@mail.com","password": "14"}';
+        var data = '{"email": "' + userEmail + '","password": "' + userPassword + '"}';
 
         xhr.send(data);
 
